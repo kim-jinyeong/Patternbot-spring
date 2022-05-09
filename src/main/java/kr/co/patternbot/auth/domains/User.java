@@ -14,11 +14,10 @@
  * 2022-05-03         kimjinyeong    최초 생성
  */
 
-package kr.co.patternbot.domains;
+package kr.co.patternbot.auth.domains;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Data

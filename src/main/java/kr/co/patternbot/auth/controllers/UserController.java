@@ -14,12 +14,11 @@
  * 2022-05-04         kimjinyeong    최초 생성
  */
 
-package kr.co.patternbot.controllers;
+package kr.co.patternbot.auth.controllers;
 
-import kr.co.patternbot.domains.User;
-import kr.co.patternbot.services.UserService;
+import kr.co.patternbot.auth.domains.User;
+import kr.co.patternbot.auth.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -35,16 +34,6 @@ import java.util.Optional;
 public class UserController {
 
     private final UserService service;
-
-    @PostMapping("/login")
-    public String login(@RequestBody User user) {
-        return service.login(user);
-    }
-
-    @GetMapping("/logout")
-    public String logout() {
-        return "";
-    }
 
     @GetMapping("/findAll")
     public List<User> findAll() {

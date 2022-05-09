@@ -1,6 +1,6 @@
-package kr.co.patternbot.repositories;
+package kr.co.patternbot.auth.repositories;
 
-import kr.co.patternbot.domains.User;
+import kr.co.patternbot.auth.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
