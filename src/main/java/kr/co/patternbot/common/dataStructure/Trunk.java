@@ -1,8 +1,8 @@
 /**
-* packageName: kr.co.patternbot.common.algorithm
-* fileNa     : QLambda
+* packageName: kr.co.patternbot.common.dataStructure
+* fileNa     : Trunk
 * au         : kimjinyeong
-* date       : 2022-05-11
+* date       : 2022-05-12
 * desc       : 
 * class variable : 
 *instance variable : 
@@ -11,8 +11,8 @@
 * ================================
 *  DATE              AUTHOR        NOTE
 * ================================
-*  2022-05-11         kimjinyeong    최초 생성        
+*  2022-05-12         kimjinyeong    최초 생성        
 */
 
-package kr.co.patternbot.common.algorithm;public class QLambda {
+package kr.co.patternbot.common.dataStructure;public class Trunk {
 }
