@@ -1,6 +1,6 @@
 /**
-* packageName: kr.co.patternbot.common.dataStructure
-* fileNa     : Box
+* packageName: kr.co.patternbot.common.enums
+* fileNa     : PlantTest
 * au         : kimjinyeong
 * date       : 2022-05-13
 * desc       : 
@@ -14,5 +14,5 @@
 *  2022-05-13         kimjinyeong    최초 생성        
 */
 
-package kr.co.patternbot.common.dataStructure;public class Box {
+package kr.co.patternbot.common.enums;public class PlantTest {
 }

@@ -1,8 +1,8 @@
 /**
-* packageName: kr.co.patternbot.common.dataStructure
-* fileNa     : Trunk
+* packageName: kr.co.patternbot.common.lambda
+* fileNa     : MyLambda
 * au         : kimjinyeong
-* date       : 2022-05-12
+* date       : 2022-05-13
 * desc       : 
 * class variable : 
 *instance variable : 
@@ -11,8 +11,8 @@
 * ================================
 *  DATE              AUTHOR        NOTE
 * ================================
-*  2022-05-12         kimjinyeong    최초 생성        
+*  2022-05-13         kimjinyeong    최초 생성        
 */
 
-package kr.co.patternbot.common.dataStructure;public class Trunk {
+package kr.co.patternbot.common.lambda;public class MyLambda {
 }
