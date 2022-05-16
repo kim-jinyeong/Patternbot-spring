@@ -23,12 +23,12 @@ public class Quiz4 {
         while (true){
             System.out.println("1.소수 ");
             switch (scanner.next()){
-                case "1": primeNumber(scanner); break;
+                case "1": primeNumber(); break;
 
             }
         }
     } // main
-    static void primeNumber(Scanner scanner) {
+    static void primeNumber() {
         Scanner scanner1 = new Scanner(System.in);
         int a;
         System.out.print("수 입력 : ");
@@ -47,5 +47,6 @@ public class Quiz4 {
             }
             count = 0;
         }
+        System.out.println();
     }
 }

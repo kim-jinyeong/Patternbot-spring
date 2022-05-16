@@ -21,15 +21,14 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @Data
 @Lazy
-public class Box <T>{
+public class Vector<T>{
     private ArrayList<T> list ;
 
-    public Box(){this.list = new ArrayList<>();}
+    public Vector(){this.list = new ArrayList<>();}
 
     public void add(T t){
         list.add(t);

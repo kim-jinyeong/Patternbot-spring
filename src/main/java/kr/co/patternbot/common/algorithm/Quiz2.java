@@ -22,9 +22,8 @@ public class Quiz2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true){
-            System.out.println("0.종료 1.버블 2.삽입 3.선택 4.퀵 5.병합 6.매직 7.지그재그 8.직각별 9.정삼각별");
+            System.out.println("1.버블 2.삽입 3.선택 4.퀵 5.병합 6.매직 7.지그재그 8.직각별 9.정삼각별");
             switch (scanner.next()){
-                case "0": return;
                 case "1": bubbleSort(); break;
                 case "2": insertionSort(); break;
                 case "3": selectionSort(); break;
@@ -40,6 +39,7 @@ public class Quiz2 {
                 case "7": zigzag(); break;
                 case "8": rectangleStarPrint(); break;
                 case "9": triangleStarPrint (); break;
+                default: return;
             }
         }
     } // main

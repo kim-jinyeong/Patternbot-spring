@@ -16,15 +16,19 @@
 
 package kr.co.patternbot.common.lambda;
 
-public class Calcurator {
+
+import static kr.co.patternbot.common.lambda.Lambda.random;
+
+public class Calculator {
     public static void main(String... args) {
         var s = "계산기";
         System.out.println(s);
         Calculator c = new Calculator();
-        System.out.println("10 + 5 = " + c.operate(10, 5, addition));
-        System.out.println("10 - 5 = " + c.operate(10, 5, subtraction));
-        System.out.println("10 x 5 = " + c.operate(10, 5, multiplication));
-        System.out.println("10 / 5 = " + c.operate(10, 5, division));
+        System.out.println("10 + 5 = " + c.operate(10, 5, (a, b) -> a + b));
+        System.out.println("10 - 5 = " + c.operate(10, 5, (a, b) -> a - b));
+        System.out.println("10 x 5 = " + c.operate(10, 5, (a, b) -> a * b));
+        System.out.println("10 / 5 = " + c.operate(10, 5, (a, b) -> a / b));
+        System.out.println(random(0,5));
     }
     interface Arithmetic{
         int operation(int a, int b);

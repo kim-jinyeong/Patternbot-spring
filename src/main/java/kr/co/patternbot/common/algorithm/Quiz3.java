@@ -31,6 +31,7 @@ public class Quiz3 {
                 case "2": teamLeaderSubject(arr); break;
                 case "3": queueManager(arr); break;
                 case "4": subjectCountPerPerson(arr); break;
+                default:return;
             }
         }
     } // main
