@@ -35,42 +35,36 @@ public class PersonStream {
     @NoArgsConstructor
     public static class Person{
         private String name, ssn;
-
         @Override
         public String toString() {
-            return "성함 : " +  name + " 나이 : " + ((123 - Integer.valueOf(ssn.substring(0,2))) % 100)
+            return "성함 : " +  name + " 나이 : " +
+                    (ssn.charAt(7) == '1' ||ssn.charAt(7) == '2'
+                            ?123 - Integer.valueOf(ssn.substring(0,2))
+                            :(123 - Integer.valueOf(ssn.substring(0,2))) % 100 )
                     + " 성별 : " + (Integer.valueOf(ssn.charAt(7)) % 2 == 0 ? "여성입니다" : "남성입니다.");
         }
     }
     // 기능 : 회원 검색
+    @FunctionalInterface interface PersonService{
+        Person search(List<Person>arr);
 
-
-    interface PersonService{ Person search(List<Person>arr);}
-
-    static class PersonServiceImpl implements PersonService{
-
-        @Override
-        public Person search(List<Person>arr) {
-                    return arr.stream()
-                            .filter(e -> e.getName().equals("홍길동"))
-                            .collect(Collectors.toList()).get(0);
-        }
     }
     @Test
     void personStreamTest(){
         // "홍길동" , "900120-1"
         // "유관순" , "040920-4"
         // 남성, 여성 판단 로직
-        List<Person> arr = Arrays.asList(
-                Person.builder().name("홍길동").ssn("990120-1").build(),
+        List<Person> l = Arrays.asList(
+                Person.builder().name("홍길동").ssn("100120-1").build(),
                 Person.builder().name("홍순이").ssn("950120-2").build(),
-                Person.builder().name("김유신").ssn("970620-3").build(),
+                Person.builder().name("김유신").ssn("100620-3").build(),
                 Person.builder().name("유관순").ssn("040920-4").build()
         );
-        System.out.println(
-                new PersonServiceImpl()
-                .search(arr)
-        );
+        PersonService ps = arr -> arr
+                .stream()
+                .filter(e -> e.getName().equals("홍길동"))
+                .collect(Collectors.toList()).get(0);
+        System.out.println(ps.search(l));
 
     }
 }

@@ -1,8 +1,8 @@
 /**
- * packageName: kr.co.patternbot.domains
- * fileNa     : User
+ * packageName: kr.co.patternbot.auth.domains
+ * fileNa     : Board
  * au         : kimjinyeong
- * date       : 2022-05-03
+ * date       : 2022-05-18
  * desc       :
  * class variable :
  * instance variable :
@@ -11,39 +11,40 @@
  * ================================
  * DATE              AUTHOR        NOTE
  * ================================
- * 2022-05-03         kimjinyeong    최초 생성
+ * 2022-05-18         kimjinyeong    최초 생성
  */
 
 package kr.co.patternbot.auth.domains;
 
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.data.repository.cdi.Eager;
 import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
 @Component
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "boards")
+public class Board {
     @Id
-    @Column(name = "user_id")
+    @Column(name = "board_id")
     @GeneratedValue
-    private long userId;
-    @Column private @NotNull String username;
-    @Column private @NotNull String password;
-    @Column private @NotNull String name;
-    @Column private @NotNull String email;
-    @Column(name = "reg_date")
-    @NotNull private String regDate;
+    private long boardId;
+    @Column private @NotNull String boardname;
+    @Column(name = "written_date")
+    @NotNull private String writtenDate;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "board")
     List<Article> list = new ArrayList<>();
 
 }

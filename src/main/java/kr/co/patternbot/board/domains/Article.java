@@ -25,7 +25,7 @@ import javax.persistence.*;
 @Data
 @Component
 @Entity
-@Table(name = "articles")
+@Table(name = "")
 public class Article {
     @Id Long id;
     private String projects;
