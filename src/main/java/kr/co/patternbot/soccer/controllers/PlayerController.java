@@ -1,6 +1,6 @@
 /**
  * packageName: kr.co.patternbot.soccer.controllers
- * fileNa     : ScheduleController
+ * fileNa     : PayerController
  * au         : kimjinyeong
  * date       : 2022-05-09
  * desc       :
@@ -16,8 +16,8 @@
 
 package kr.co.patternbot.soccer.controllers;
 
-import kr.co.patternbot.soccer.domains.Schedule;
-import kr.co.patternbot.soccer.services.ScheduleService;
+import kr.co.patternbot.soccer.domains.Player;
+import kr.co.patternbot.soccer.services.PlayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,22 +29,22 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/Schedule")
-public class ScheduleController {
-    private final ScheduleService service ;
+@RequestMapping("/Player")
+public class PlayerController {
+    private final PlayerService service;
 
     @GetMapping("/findAll")
-    public List<Schedule> findAll() {
+    public List<Player> findAll() {
         return service.findAll();
     }
 
     @GetMapping("/findAll/sort")
-    public List<Schedule> findAll(Sort sort) {
+    public List<Player> findAll(Sort sort) {
         return service.findAll(sort);
     }
 
     @GetMapping("/findAll/pageable")
-    public Page<Schedule> findAll(Pageable pageable) {
+    public Page<Player> findAll(Pageable pageable) {
         return service.findAll(pageable);
     }
 
@@ -54,27 +54,28 @@ public class ScheduleController {
     }
 
     @PutMapping("/put")
-    public String put(@RequestBody Schedule schedule) {
-        return service.put(schedule);
+    public String put(@RequestBody Player Player) {
+        return service.put(Player);
     }
 
     @DeleteMapping("/delete")
-    public String delete(@RequestBody Schedule schedule) {
-        return service.delete(schedule);
+    public String delete(@RequestBody Player Player) {
+        return service.delete(Player);
     }
 
     @PostMapping("/join")
-    public String save(@RequestBody Schedule schedule) {
-        return service.save(schedule);
+    public String save(@RequestBody Player Player) {
+        return service.save(Player);
     }
 
-    @GetMapping("/findById/{scheduleid}")
-    public Optional<Schedule> findById(@PathVariable String scheduleid) {
-        return service.findById(scheduleid);
+    @GetMapping("/findById/{playerid}")
+    public Optional<Player> findById(@PathVariable String playerid) {
+        return service.findById(playerid);
     }
 
-    @GetMapping("/existsById/{scheduleid}")
-    public boolean existsById(@PathVariable String scheduleid) {
-        return service.existsById(scheduleid);
+    @GetMapping("/existsById/{playerid}")
+    public boolean existsById(@PathVariable String playerid) {
+        return service.existsById(playerid);
     }
+
 }

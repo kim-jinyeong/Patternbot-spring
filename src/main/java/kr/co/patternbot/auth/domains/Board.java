@@ -45,6 +45,6 @@ public class Board {
     @NotNull private String writtenDate;
 
     @OneToMany(mappedBy = "board")
-    List<Article> list = new ArrayList<>();
+    List<Article> ls = new ArrayList<>();
 
 }

@@ -1,6 +1,6 @@
 /**
  * packageName: kr.co.patternbot.board.domains
- * fileNa     : Board
+ * fileNa     : Article
  * au         : kimjinyeong
  * date       : 2022-05-09
  * desc       :
@@ -20,12 +20,18 @@ package kr.co.patternbot.board.domains;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Component
 @Entity
-public class Board{
-    @Id Long id ;
+@Table(name = "article")
+public class Article2 {
+    @Id Long id;
+    private String projects;
+    private String startDate;
+    private String status;
+    private String team;
+    private String progerss;
+    private String action;
 }

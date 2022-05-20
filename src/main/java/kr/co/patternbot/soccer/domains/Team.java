@@ -19,19 +19,24 @@ package kr.co.patternbot.soccer.domains;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Component
 @Data
+@Table(name = "Teams")
 public class Team {
-    @Id String teamId;
+    @Id
+    @Column(name = "team_no")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) private long teamNo;
+    @Column(nullable = false) private String teamId;
+    @Column(nullable = false) private String stadiumId;
     private String regionName;
     private String teamName;
     private String eTeamName;
     private String origYyyy;
-    private String stadiumId;
     private String zipCode1;
     private String zipCode2;
     private String address;
@@ -40,4 +45,8 @@ public class Team {
     private String fax;
     private String homepage;
     private String owner;
+
+    @OneToMany(mappedBy = "team")
+    List<Player> players = new ArrayList<>();
+
 }

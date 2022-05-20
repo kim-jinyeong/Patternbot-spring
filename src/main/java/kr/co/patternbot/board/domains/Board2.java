@@ -1,6 +1,6 @@
 /**
- * packageName: kr.co.patternbot.soccer.controllers
- * fileNa     : PayerController
+ * packageName: kr.co.patternbot.board.domains
+ * fileNa     : Board
  * au         : kimjinyeong
  * date       : 2022-05-09
  * desc       :
@@ -14,7 +14,18 @@
  * 2022-05-09         kimjinyeong    최초 생성
  */
 
-package kr.co.patternbot.soccer.controllers;
+package kr.co.patternbot.board.domains;
 
-public class PayerController {
+
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Data
+@Component
+@Entity
+public class Board2 {
+    @Id Long id ;
 }
