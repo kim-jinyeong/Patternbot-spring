@@ -10,8 +10,8 @@ interface StadiumCustomRepository{
     // 스타디움 전화번호 tel 을 변경하도록 하시오
     @Query(value = "update set t.tel = :tel where t.teams",
           nativeQuery = true)
-    int update(@Param("tel")String tel)
+    int update(@Param("tel")String tel);
 }
 @Repository
-public interface StadiumRepository extends JpaRepository<Stadium, Long>,StadiumCustomRepository {
+public interface StadiumRepository extends JpaRepository<Stadium, Long> {
 }

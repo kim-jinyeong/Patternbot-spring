@@ -45,7 +45,7 @@ public class Gugudan {
     @Test
     void test(){
 
-        ISolution f = (e) -> {
+        ISolution f = e -> {
             String result = "";
             for(int k = 2; k <= e.getNum(); k+=4) {
                 for (int i = 1; i <= e.getNum(); i++) {
