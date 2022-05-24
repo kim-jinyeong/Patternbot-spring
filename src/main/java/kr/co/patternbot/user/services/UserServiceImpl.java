@@ -14,10 +14,10 @@
  * 2022-05-03         kimjinyeong    최초 생성
  */
 
-package kr.co.patternbot.auth.services;
+package kr.co.patternbot.user.services;
 
 import kr.co.patternbot.auth.domains.User;
-import kr.co.patternbot.auth.repositories.UserRepository;
+import kr.co.patternbot.user.repositories.UserRepository;
 import kr.co.patternbot.common.dataStructure.Box;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

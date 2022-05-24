@@ -16,7 +16,8 @@
 
 package kr.co.patternbot.security.domains;
 
-import kr.co.patternbot.auth.domains.Role;
+
+import kr.co.patternbot.user.domains.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;

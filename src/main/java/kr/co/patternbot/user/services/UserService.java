@@ -1,4 +1,4 @@
-package kr.co.patternbot.auth.services;
+package kr.co.patternbot.user.services;
 
 
 import kr.co.patternbot.auth.domains.User;

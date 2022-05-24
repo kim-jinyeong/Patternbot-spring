@@ -17,6 +17,8 @@
 package kr.co.patternbot.board.domains;
 
 
+import com.sun.istack.NotNull;
+import kr.co.patternbot.auth.domains.User;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -26,12 +28,14 @@ import javax.persistence.*;
 @Component
 @Entity
 @Table(name = "article")
-public class Article2 {
-    @Id Long id;
-    private String projects;
-    private String startDate;
-    private String status;
-    private String team;
-    private String progerss;
-    private String action;
+public class Article {
+    @Id @Column(name = "article_id") @GeneratedValue private long articleId;
+    @Column @NotNull private String title;
+    @Column @NotNull private String content;
+    @Column(name = "written_date") @NotNull private String writtenDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }
