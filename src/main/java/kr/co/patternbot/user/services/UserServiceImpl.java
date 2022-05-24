@@ -16,7 +16,7 @@
 
 package kr.co.patternbot.user.services;
 
-import kr.co.patternbot.auth.domains.User;
+import kr.co.patternbot.user.domains.User;
 import kr.co.patternbot.user.repositories.UserRepository;
 import kr.co.patternbot.common.dataStructure.Box;
 import lombok.RequiredArgsConstructor;
@@ -30,12 +30,12 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
     private final UserRepository repository;
+
 
     @Override
     public String login(User user) {
-        //repository.login(user);
         return "";
     }
 
@@ -60,10 +60,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String put(User user) {
-       // repository.put(user);
+    public String update(User user) {
         return "";
     }
+
 
     @Override
     public String delete(User user) {
@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User>findByUserName(String name){
+    public List<User> findByUserName(String name) {
         List<User> ls = repository.findAll();
         Box<String, User> box = new Box<>();
         return null;

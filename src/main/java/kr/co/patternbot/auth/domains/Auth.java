@@ -15,6 +15,7 @@
  */
 
 package kr.co.patternbot.auth.domains;
+import kr.co.patternbot.user.domains.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import net.minidev.json.annotate.JsonIgnore;

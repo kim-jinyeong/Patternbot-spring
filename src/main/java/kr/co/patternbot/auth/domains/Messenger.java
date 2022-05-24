@@ -1,8 +1,8 @@
 /**
- * packageName: kr.co.patternbot.security.domains
+ * packageName: kr.co.patternbot.auth.domains
  * fileNa     : Messenger
  * au         : kimjinyeong
- * date       : 2022-05-23
+ * date       : 2022-05-25
  * desc       :
  * class variable :
  * instance variable :
@@ -11,10 +11,10 @@
  * ================================
  * DATE              AUTHOR        NOTE
  * ================================
- * 2022-05-23         kimjinyeong    최초 생성
+ * 2022-05-25         kimjinyeong    최초 생성
  */
 
-package kr.co.patternbot.security.domains;
+package kr.co.patternbot.auth.domains;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -24,5 +24,4 @@ import lombok.Getter;
 public class Messenger {
     private String message, code;
     private int status;
-
 }

@@ -42,7 +42,7 @@ public class  User {
     @Column private @NotNull String email;
     @Column(name = "reg_date") @NotNull private String regDate;
 
-    @OneToMany(mappedBy = "u")
+    @OneToMany(mappedBy = "user")
     List<Article> a = new ArrayList<>();
 
     @ElementCollection(fetch = FetchType.EAGER)

@@ -16,6 +16,8 @@
 
 package kr.co.patternbot.user.controllers;
 
+import kr.co.patternbot.user.domains.User;
+import kr.co.patternbot.user.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
