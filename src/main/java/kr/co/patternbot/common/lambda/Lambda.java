@@ -38,6 +38,14 @@ public class Lambda {
         Function<Object, String> f = String::valueOf;
         return f.apply(ob);
     }
+    public static long longParse(String s){
+        Function<String, Long> f = Long :: parseLong;
+        return f.apply(s);
+    }
+    public static float floatParse(String s){
+        Function<String, Float> f = Float :: parseFloat;
+        return f.apply(s);
+    }
     public static boolean equals(String s1, String s2){
         BiPredicate<String, String> f = String::equals;
         return f.test(s1,s2);
