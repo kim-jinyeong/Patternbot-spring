@@ -23,7 +23,10 @@ import static kr.co.patternbot.common.dataStructure.AppleList.Apple;
 import static kr.co.patternbot.common.dataStructure.AppleList.Apple.Builder;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
@@ -64,10 +67,15 @@ public class Lambda {
         Function<String, File> f = File ::new;
         return f.apply(http);
     }
+    public static String getDate(){
+        Supplier<String> f = () -> string(LocalDate.now());
+        return f.get();
+    }
     @Test
     void LambdaTest(){
         System.out.println();
         System.out.println(arr(8).length);
         System.out.println(random(0,5));
+        System.out.println(getDate());
     }
 }

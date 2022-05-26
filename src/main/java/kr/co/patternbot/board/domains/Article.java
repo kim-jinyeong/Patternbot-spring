@@ -18,16 +18,19 @@ package kr.co.patternbot.board.domains;
 
 
 import com.sun.istack.NotNull;
-import kr.co.patternbot.auth.domains.User;
-import lombok.Data;
+import kr.co.patternbot.user.domains.User;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
-@Data
+@Builder
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Component
 @Entity
-@Table(name = "article")
+@Table(name = "articles")
 public class Article {
     @Id @Column(name = "article_id") @GeneratedValue private long articleId;
     @Column @NotNull private String title;
@@ -38,4 +41,7 @@ public class Article {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "board_id")
+    private Board board;
 }
